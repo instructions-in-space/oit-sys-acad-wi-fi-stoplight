@@ -1,0 +1,99 @@
+--------------------------------------------------------------------------------
+Instructions
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+How to Build a GitHub Repository
+Introduction
+This is for my OIT Systems Academy projects, so it needs to be either publicly-
+accessible or I need to be able to share it with Todd Berrett.  
+---
+Create Repository
+.  In your favorite internet browser, go to https://github.com/
+.  If you aren't already logged in, log in using your BYU GitHub account.
+.  In the upper right corner is a "+" button with a dropdown menu icon attached 
+to it.  Click that button.
+.  Click the "New respository" item.  This should take you to a "Create a new
+repository" page.  
+.  Leave the "Select an organization" dropdown menu unset (because we're not
+making this a part of either the "byu-oit" or "byu-oit-sdk" organizations).
+.  Leave the "Repository template" item unset.
+.  Under "Owner", set "Choose an owner" to your own user.
+.  Under "Repository name", put "oit-sys-acad-wi-fi-stoplight".
+.  Wait to see if the name is available; if so, go to the next step; if not,
+change the name until you find one that is available.
+.  In the "Description" field, put "This is the repository for my "Wi-Fi"
+stoplight project for OIT Systems Academy."
+.  Leave the type of repository set to "Public".
+.  Skip the "README" and ".gitignore" portions (you will add those later 
+anyway).  For reference, see the following:
+	https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
+	https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+.  Under "Choose a license", pick a license (I chose the GPLv3 one).
+.  Click the "Create repository" button (lower right).
+.  You should now be taken to the root of your new project in GitHub.  Make note
+of the URL:  
+	https://github.com/instructions-in-space/oit-sys-acad-wi-fi-stoplight
+---
+Clone Your New Repository and Add One or More Files to It
+.  Toward the top and right of the page should be a gree "< > Code" button.  
+Click that button.  
+.  On the "Local" tab, under "Clone", click the "SSH" tab.
+.  To the right of the text field is a copy button; click that button.
+.  Now, open a terminal and "cd" into your "~/git/" folder.
+.  Make a directory called "oit-systems-academy".
+.  Type "git clone "
+.  Paste the string you copied (above) into the terminal (after "git clone ").
+.  Hit Enter.  You should see something like this:
+	Cloning into 'oit-sys-acad-wi-fi-stoplight'...
+	remote: Enumerating objects: 3, done.
+	remote: Counting objects: 100% (3/3), done.
+	remote: Compressing objects: 100% (2/2), done.
+	remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+	Receiving objects: 100% (3/3), 12.67 KiB | 2.53 MiB/s, done.
+(If you get an error, it probably means that you haven't set up SSH keys in
+GitHub yet; if so, do that and then try the above steps again.)
+.  "cd" into the new repository:
+	cd oit-sys-acad-wi-fi-stoplight/
+.  Look around:
+	ls -lah
+You should see a ".git" folder and a "LICENSE" file.
+.  At this point, it is appropriate to consider whether or not you need a
+".gitignore" file.  If you're not going to be storing any ".env" files (with
+credentials, e.g., usernames, passwords, API identifiers and keys), that's good 
+because it's very important that you don't commit those to a project.  If you're 
+going to be using Python, you will want to make a ".gitignore" file and include 
+the following line:
+	__pycache__/
+(this has Git ignore the "__pycache__" directory).  Likewise, if you are on
+a Mac, it's a good idea to include ".DS_Store".  When I was done with my
+".gitignore" file, it looked like this:
+	__pycache__/
+	.DS_Store
+.  Now, when you look around again:
+	ls -lah
+you should see the following:
+	.git
+	.gitignore
+	LICENSE
+.  Check the status of the repository:
+	git status
+.  Add the new file:
+	git add .gitignore
+.  Go ahead and commit and push your changes:
+	git commit -a
+	(Write a commit message and save it.)
+	git push origin main
+(If you get any errors here, it probably means that the user account on your
+computer isn't set up completely.)
+.  Refresh your repository's GitHub page 
+(https://github.com/instructions-in-space/oit-sys-acad-wi-fi-stoplight ) and
+you should now see the ".gitignore" file you added.  
+.  Add any files you want to be in your repository to the 
+"oit-sys-acad-wi-fi-stoplight" folder, but remember that anything you put into
+it will be *PUBLIC* as soon as it's committed and pushed to GitHub (so be 
+careful what you put there).  
+---
+Sources:
+	https://stackoverflow.com/questions/3719243/best-practices-for-adding-gitignore-file-for-python-projects
+	https://github.com/github/gitignore/blob/main/Python.gitignore
+--------------------------------------------------------------------------------
+
