@@ -5,7 +5,7 @@ Project Planning
 	Flowcharts
 	Other documentation
 2.  Wear my shirt and shorts:
-	It's cold, so I'll wear it over my regular clothes.
+	It's cold, so I'll wear them over my regular clothes.
 3.  Iterate in development.  To do this, I need a list of stages to go through:
 	a.  Manually turn each light on and off
 	b.  Lights cycle (green to yellow to red) automatically (without pause)
@@ -28,7 +28,9 @@ Project Planning
 			actually having to drive up to the stoplight in a
 			vehicle).  
 I also need to save each code version at each stage so that each one can be
-examined independently (to demonstrate the iterations).  
+examined independently (to demonstrate the iterations).  I should probably do
+this using Git branches, but I need to do more research to see what would be
+the best way (perhaps it's returning to a previous "commit").
 4.  Create supporting documentation:
 	Design documents
 	Images
@@ -41,6 +43,7 @@ examined independently (to demonstrate the iterations).
 --------------------------------------------------------------------------------
 Tasks and Time Planning
 _Task_							_When_to_Complete_
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 Make a folder that will be come my Git repo.		Monday 10 February
 Begin planning document (i.e, this document).		Monday 10 February
 Figure out how to wear my shirt and shorts.		Monday 10 February
@@ -50,7 +53,8 @@ Revisit list of iterations to add or change steps	Monday 10 February
 Learn how to use the external monitor's magnetic stand	Monday 10 February
 Create Git repository and add current material		Monday 10 February
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-Put 
+Put together my Raspberry Pi				Friday 14 February
+Image my Raspberry Pi					Friday 14 February
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

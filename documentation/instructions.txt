@@ -95,5 +95,105 @@ careful what you put there).
 Sources:
 	https://stackoverflow.com/questions/3719243/best-practices-for-adding-gitignore-file-for-python-projects
 	https://github.com/github/gitignore/blob/main/Python.gitignore
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+How to Put a Raspberry Pi 5 Together
+Introduction
+Raspberry Pis are "one board" computers, so they are quite a bit simpler to put
+together than a traditional desktop computer, but there are a few things that
+are usually a good idea (besides just hanging the single board from a string or
+putting it on a table at its operating location):
+• Add heat sinks to certain components on the board.
+• Mount a fan on (or in) the case.
+• Mount the board in a case (of some sort).
+
+Minus a set of instructions, you kind of have to use your imagination when
+trying to figure out how to do all three things above.  First, though, you 
+should read the "Safety Instructions" (on a paper translated into numerous
+languages) that are included in the paperboard box the Raspberry Pi came in.
+Some of these safety instructions are summarized in a series of modern 
+heiroglyphs on a card also included in the Raspberry Pi box:
+• Read the instructions.
+• Hold the Raspberry Pi by its edges.
+• Don't let the Raspberry Pi get too hot.
+• Don't touch the board while it's plugged into a power source.
+• Keep the board oriented upward
+• If you have questions, visit "raspberrypi.com".
+
+Heat Sinks
+
+The first task is to attach the heat sinks which will be held in place with a
+pre-applied sticky substance suitable for conducting heat (without melting or
+making unpleasantly smelling or dangerous gasses).  There are four heat sinks,
+each a different size, so we need to figure out where they go on the Raspberry
+Pi (computer board).  One of the heat sinks has a wide channel down the middle,
+which seems to match a square component that has a wide raised area, so that 
+one's easy.  There are two medium-sized heat sinks, one square, and one
+rectangular; these seem to match two chips on the board.  The smallest heat 
+sink, however, looks like it could go in a couple of different spots.  
+
+To be safe, I'm going to "duckduckgo" (for privacy's sake) for an image
+or instructions on where they should go ("raspberry pi 5 4GB heatsink placement 
+passive cooling" is a good search).  I quickly discovered (since there are so
+many different models of Raspberry Pi and a number of different cooling setups)
+that image search seemed to be the quickest way to find what I was looking for.  
+It took several minutes, but I finally found a grainy image that showed where 
+all four heat sinks are supposed to go (on this page:  https://www.indiamart.com/proddetail/raspberry-pi-5-copper-heat-sink-passive-cooling-heatsinks-with-self-adhesive-radiator-2854298112612.html ).  It shows the 
+smallest heat sink as being on the chip (that size) turned such that it looks
+diamond-shaped (and not the one on the opposite side surrounded by several
+even smaller chips).  
+
+Before attaching the heat sinks, take a close-up photograph of where they're 
+going to go so you will have a record of the writing on the chips in case you 
+need it later.  Now, go ahead and carefully peel back the blue cover of the 
+adhesive and (also carefully) attach each heat sink to its corresponding 
+component.  Tips:
+• It helps to be strategic about the order in which you attach them:  I started 
+with the smallest one (since it's near some much taller components and would be 
+sandwiched in between those and one of the other heat sinks if I didn't do it 
+first).  
+• Sliding one of your fingernails under the blue cover at one of the corners 
+seems to work well.  
+• Try to be as exact as you can in placing them (so that they cover the surface 
+of the chip as completely as possible).
+• Press each heat sink into place snugly.
+• If you happen to have tweezers, they can be very helpful in removing the blue
+covers.
+• If you're not sure about a placement (and need to move your fingers away to
+inspect it), set the heat sink down lightly (since you can then pick it back up
+again to adjust the position).  
+
+Mount a Fan
+
+The question about the fan is:  Should it be mounted on the inside or outside of
+the case?  It's not clear from the look of things (without some investigation)
+how it should be done.  To find out, I'm actually going to put it all together
+(temporarily) to see how much space there is beneath the top of the case and 
+above the board.  After playing around with the parts a bit, it looks like the
+screws we've been given to attach the fan would bump up against the top of a
+couple of the heat sinks (possibly preventing the case from closing).  This 
+means that it's probably not a good idea to mount the fan inside the case (even
+though this also means that the fan's cable will have to go through the opening
+that exposes the GPIO pins).  
+
+On the other hand, there's no reason I couldn't have the screws come *up* 
+through the case (having the nuts on the outside is, arguably, less unsightly 
+and problematic [for the reasons already mentioned] than having the entire fan 
+on the outside).  Another question is, should I put the screws into the fan in 
+such a way that the heads are inset (probably the way it was intended to be).  
+Doing it this way means that the screws will extend slightly farther out that 
+they would otherwise (and will probably have implications for the direction the 
+fan blows, so I may need to reverse it later).  I like this idea because it 
+means that the fan's cable will be on the inside where it's less like to be 
+damaged (and I think I can live with screws and nuts protruding from the top).
+
+I think I'll orient the fan so that its cable protrudes away from the opening
+for accessing the GPIO ports (for the reason already stated); it would be best
+if that (delicate) cable isn't anywhere where it could be damaged.  
+
+(LEFT OFF HERE)
+
+
+Source:  https://www.raspberrypi.com/documentation/computers/getting-started.html
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 --------------------------------------------------------------------------------
 
