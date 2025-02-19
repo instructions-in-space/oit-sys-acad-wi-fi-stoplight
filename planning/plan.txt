@@ -44,17 +44,17 @@ the best way (perhaps it's returning to a previous "commit").
 Tasks and Time Planning
 _Task_							_When_to_Complete_
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-Make a folder that will be come my Git repo.		Monday 10 February
-Begin planning document (i.e, this document).		Monday 10 February
-Figure out how to wear my shirt and shorts.		Monday 10 February
-Make a list of design iteration steps			Monday 10 February
-Make an inventory of all of the hardware components	Monday 10 February
-Revisit list of iterations to add or change steps	Monday 10 February
-Learn how to use the external monitor's magnetic stand	Monday 10 February
-Create Git repository and add current material		Monday 10 February
+Make a folder that will be come my Git repo.		10 February
+Begin planning document (i.e, this document).		10 February
+Figure out how to wear my shirt and shorts.		10 February
+Make a list of design iteration steps			10 February
+Make an inventory of all of the hardware components	10 February
+Revisit list of iterations to add or change steps	10 February
+Learn how to use the external monitor's magnetic stand	10 February
+Create Git repository and add current material		10 February
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-Put together my Raspberry Pi				Friday 14 February
-Image my Raspberry Pi					Friday 14 February
+Put together my Raspberry Pi				14, 18 February
+Image my Raspberry Pi					18 February
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 

@@ -2,10 +2,11 @@
 Instructions
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 How to Build a GitHub Repository
+
 Introduction
 This is for my OIT Systems Academy projects, so it needs to be either publicly-
 accessible or I need to be able to share it with Todd Berrett.  
----
+
 Create Repository
 .  In your favorite internet browser, go to https://github.com/
 .  If you aren't already logged in, log in using your BYU GitHub account.
@@ -32,7 +33,7 @@ anyway).  For reference, see the following:
 .  You should now be taken to the root of your new project in GitHub.  Make note
 of the URL:  
 	https://github.com/instructions-in-space/oit-sys-acad-wi-fi-stoplight
----
+
 Clone Your New Repository and Add One or More Files to It
 .  Toward the top and right of the page should be a gree "< > Code" button.  
 Click that button.  
@@ -91,12 +92,13 @@ you should now see the ".gitignore" file you added.
 "oit-sys-acad-wi-fi-stoplight" folder, but remember that anything you put into
 it will be *PUBLIC* as soon as it's committed and pushed to GitHub (so be 
 careful what you put there).  
----
+
 Sources:
 	https://stackoverflow.com/questions/3719243/best-practices-for-adding-gitignore-file-for-python-projects
 	https://github.com/github/gitignore/blob/main/Python.gitignore
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 How to Put a Raspberry Pi 5 Together
+
 Introduction
 Raspberry Pis are "one board" computers, so they are quite a bit simpler to put
 together than a traditional desktop computer, but there are a few things that
@@ -152,12 +154,11 @@ with the smallest one (since it's near some much taller components and would be
 sandwiched in between those and one of the other heat sinks if I didn't do it 
 first).  
 • Sliding one of your fingernails under the blue cover at one of the corners 
-seems to work well.  
+seems to work well for beginning to detach the blue cover of the adhesive (if 
+you happen to have tweezers, they would be very helpful in doing this).
 • Try to be as exact as you can in placing them (so that they cover the surface 
 of the chip as completely as possible).
 • Press each heat sink into place snugly.
-• If you happen to have tweezers, they can be very helpful in removing the blue
-covers.
 • If you're not sure about a placement (and need to move your fingers away to
 inspect it), set the heat sink down lightly (since you can then pick it back up
 again to adjust the position).  
@@ -188,12 +189,64 @@ damaged (and I think I can live with screws and nuts protruding from the top).
 
 I think I'll orient the fan so that its cable protrudes away from the opening
 for accessing the GPIO ports (for the reason already stated); it would be best
-if that (delicate) cable isn't anywhere where it could be damaged.  
+if that (delicate) cable isn't anywhere where it can be damaged.  
 
-(LEFT OFF HERE)
+Mount the Board
 
+Prerequisite:  You will need a screwdriver for this part of the process to
+screw in the little screws that hold the top and bottom of the case together
+(through the mounting holes in the Raspberry Pi). 
+
+The jack for the fan's power plug is hidden (this is tricky because the fan's 
+plug has four pin holes, but the only jacks visible [i.e., uncovered] on the 
+board only have two and three pins, respecively).  It's up just behind the bank 
+of USB ports nearest the corner of the board and has a cover over it.  Carefully
+remove the cover (if you use a tool to do this, be sure not to bend any of the 
+pins).  
+
+Place the Raspberry Pi in the bottom part of the case (this takes a little bit
+of manual dexterity because you will have to hold the top case while you do it
+[because it's now tethered to the Raspberry Pi by the fan's power cable).  
+Centering the board on the bottom case can bit a little bit tricky (just be sure 
+that the USB and Ethernet ports on the one end line up with the slots made for 
+them and that when you're done you can see through the holes in the logic board 
+and the holes in the top case).  
+
+On the other end (by the fan), put the end cover on (it is full of ventilation 
+holes and has a power button and a cutout for accessing the microSD card slot).  
+Be sure that you orient it so that the power button is over the (actual) power 
+button on the Raspberry Pi's board.  
+
+Now, place the top case (be sure that the fan's power cord doesn't get pinched
+anywhere).  The top case should be oriented so that the slots sticking down 
+from the one side (like two front teeth) fit between the USB and Ethernet 
+ports.  
+
+Finally, install the four screws by holding the unit upside down and screwing
+each one into the holes.
 
 Source:  https://www.raspberrypi.com/documentation/computers/getting-started.html
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+How to Image a MicroSD Card for Use as the Internal Storage of a Raspberry Pi
+
+Introduction
+Historically, Raspberry Pis could only boot off of a microSD card in the one
+designated slot in the bottom of the board, and while that's not true anymore,
+the way of setting up an operating system on one is still the same:  flash an
+operating system image onto a microSD card.
+
+Set Up Raspberry Pi Imager
+We used to use "Balena Etcher" (https://etcher.balena.io/) to image microSD
+cards for Raspberry Pis, but now there is "Raspberry Pi Imager".  Go to 
+https://www.raspberrypi.com/software/ and download the version for your 
+computer's operating system.  (Note:  if you are on a Mac and happen to use
+Homebrew [https://brew.sh/], there is a "cask" for "Raspberry Pi Imager"; run
+the following:
+	sudo <administrative_user> (if you use an admin user for this)
+	
+
+
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 --------------------------------------------------------------------------------
 
