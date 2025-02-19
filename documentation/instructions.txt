@@ -242,9 +242,92 @@ https://www.raspberrypi.com/software/ and download the version for your
 computer's operating system.  (Note:  if you are on a Mac and happen to use
 Homebrew [https://brew.sh/], there is a "cask" for "Raspberry Pi Imager"; run
 the following:
-	sudo <administrative_user> (if you use an admin user for this)
+	su <administrative_user> (if you use an admin user for this)
+	(Enter the password.)
 	
+[Beginning of quick documentation]
 
+https://brew.sh/
+https://docs.brew.sh/Manpage
+brew update
+brew upgrade
+brew search raspberry
+brew install raspberry-pi-imager
+Look in /Applications/
+Launch "Raspberry Pi Imager".
+Click "Open"
+I chose to have the Raspberry Pi Imager do only the following automatically:
+	Set my user's username and password
+	Enable SSH and have it use password authentication
+	Had it eject automatically (it notifies you when it's time to remove
+			the microSD card so that you can unplug it)
+Telemetry:
+	https://forums.raspberrypi.com/viewtopic.php?t=341514
+	(The telemetry is just for Raspberry Pi Imager and doesn't collect
+			any personally identifying information.)
+The imaging takes some time (15-20 min.?).
+
+Pi Cabling Setup
+	Keyboard/mouse combo plugs into one of the four USB-A jacks on the Pi
+	(Pi) Micro HDMI to HDMI adapter plugs into HDMI to Mini HDMI cable (monitor)
+	Plug white USB-A to USB-C cable between the monitor and the USB power puck
+	Use my short USB-A to USB-C cable to power the Pi from my Anker peripherals hub
+			(Nothing else works.  If I try to power the Pi from the USB
+			power puck, it won't even get past the boot splash screen [i.e.,
+			the Pi's graphical desktop never appears].  If I try to use 
+			the long USB-A to USB-C cable, it makes it to the desktop and
+			I get the usual message complaining about it not having enough
+			power, but then another message appears saying the same thing
+			[this doesn't happen when using the short cable]).
+
+Pi OS and Software Stuff
+Change the keyboard layout from UK to US.
+Connect to "eduroam" Wi-Fi:
+	Use PEAP
+	Check the "No CA certificate required" box
+Run updates (you will see a notification on the bar at the top of the screen)
+
+SSH
+ssh mark@10.37.186.47
+
+Git Setup
+Now that you have remote access on your regular workstation, you can work on
+the command line on the Pi remotely.
+.  Do the following SSH'ed into the Pi:
+	ssh-keygen
+.  On your workstation, go to 
+https://github.com/instructions-in-space/oit-sys-acad-wi-fi-stoplight
+.  Add the new public key you generated on the Pi (in ~/.ssh/id_rsa.pub) to
+your GitHub account (click profile [upper right], then "Settings", and then
+"SSH and GPG Keys" [left], and add a new SSH key [you should have two there
+now, one for your workstation and one for the Pi]).
+.  Go back to https://github.com/instructions-in-space/oit-sys-acad-wi-fi-stoplight
+.  Click the green "< > Code" button, then the "SSH" tab, and copy the clone
+string, e.g.:
+	git@github.com:instructions-in-space/oit-sys-acad-wi-fi-stoplight.git
+.  In the terminal where you are SSH'ed into the Pi, do this:
+	mkdir git
+	cd git
+	git clone git@github.com:instructions-in-space/oit-sys-acad-wi-fi-stoplight.git
+	yes
+You should now have a clone of your Git repository here:
+	/home/mark/git/oit-sys-acad-wi-fi-stoplight
+
+GPIO Pin on Raspberry Pi 5 Research
+I went to Chat GPT (https://chatgpt.com/) and issued this prompt:
+	how to control gpio pins on raspberry pi 5
+sudo apt update
+sudo apt install python3-rpi.gpio
+	The following additional packages will be installed:
+	  rpi.gpio-common
+	The following packages will be REMOVED:
+	  python3-rpi-lgpio
+I decided to install both RPi.GPIO and GPIOZero, so I did this
+too:
+	sudo apt install python3-gpiozero
+
+Now, I need a pinout:
+	https://pinout.ai/raspberry-pi-5
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
