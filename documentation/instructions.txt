@@ -329,6 +329,45 @@ too:
 Now, I need a pinout:
 	https://pinout.ai/raspberry-pi-5
 
+UPDATE:  it turns out that RPi.GPIO is incompatible with Raspberry Pi 5, so 
+you can't use it (https://forums.raspberrypi.com/viewtopic.php?t=361218 ).
+I ended up using the code from ChatGPT (https://chatgpt.com/ ) that uses 
+"gpiozero":
+	from gpiozero import LED
+	from time import sleep
+
+	# Create an LED object for GPIO pin 17
+	led = LED(17)
+
+	# Blink the LED
+	while True:
+	    led.on()   # Turn the LED on
+	    sleep(1)   # Wait for 1 second
+	    led.off()  # Turn the LED off
+	    sleep(1)   # Wait for 1 second
+ChatGPT also led me to believe that I could use "wiringpi", but there is no
+ARM(hf) candidate for it (the error message I got when I tried to install it).
+I first tried this:  
+	https://startingelectronics.org/beginners/start-electronics-now/tut1-breadboard-circuits/
+but it didn't work, and this was helpful:
+	https://startingelectronics.org/beginners/components/LED/
+I ended up using the breadboard setup from this one 
+	https://tutorials-raspberrypi.com/raspberry-pi-gpio-explanation-for-beginners-programming-part-2/
+with the "gpiozero" code above (but changed "17" to "23") because this one 
+uses "RPi.GPIO" which threw this error:
+	python3 one-led-rpi-dot-gpio.py
+	Traceback (most recent call last):
+	  File "/home/mark/git/oit-sys-acad-wi-fi-stoplight/python/one-led-rpi-dot-gpio.py", line 10, in <module>
+	    GPIO.setup(23, GPIO.OUT)
+	RuntimeError: Cannot determine SOC peripheral base address
+Here is a more clear view:
+	https://tutorials-raspberrypi.de/wp-content/uploads/2017/03/Raspberry-Pi-GPIO-Output-Steckplatine.png
+
+
+
+
+
+
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 --------------------------------------------------------------------------------
