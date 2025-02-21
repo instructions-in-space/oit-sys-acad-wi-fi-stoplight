@@ -349,12 +349,13 @@ ChatGPT also led me to believe that I could use "wiringpi", but there is no
 ARM(hf) candidate for it (the error message I got when I tried to install it).
 I first tried this:  
 	https://startingelectronics.org/beginners/start-electronics-now/tut1-breadboard-circuits/
-but it didn't work, and this was helpful:
+but it didn't work, though this was helpful:
 	https://startingelectronics.org/beginners/components/LED/
 I ended up using the breadboard setup from this one 
 	https://tutorials-raspberrypi.com/raspberry-pi-gpio-explanation-for-beginners-programming-part-2/
 with the "gpiozero" code above (but changed "17" to "23") because this one 
-uses "RPi.GPIO" which threw this error:
+uses "RPi.GPIO" which threw this error (because RPi.GPIO is incompatible with Raspberry Pi 5 as mentioned
+above):
 	python3 one-led-rpi-dot-gpio.py
 	Traceback (most recent call last):
 	  File "/home/mark/git/oit-sys-acad-wi-fi-stoplight/python/one-led-rpi-dot-gpio.py", line 10, in <module>
@@ -363,9 +364,21 @@ uses "RPi.GPIO" which threw this error:
 Here is a more clear view:
 	https://tutorials-raspberrypi.de/wp-content/uploads/2017/03/Raspberry-Pi-GPIO-Output-Steckplatine.png
 
+Next:  start a web server:  https://realpython.com/python-http-server/
+Run this:
+	python3 -m http.server
+Then, go to your Raspberry Pi's IP address using port 8000:
+	http://10.37.186.47:8000/
+It serves out of your file system at the place you were when you ran the 
+command above. 
 
-
-
+This:  https://stackoverflow.com/questions/63195001/python3-http-server-logging-how-to
+recommends this:
+	python3 -u -m http.server 8000 2> log.txt
+for writing data to a log file.
+I'm using this:
+	tail -f log.txt
+to view the "log.txt" file as I figure out how to modify the JavaScript.
 
 
 

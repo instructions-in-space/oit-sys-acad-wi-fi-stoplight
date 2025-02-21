@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acme Stop Light Control</title>
+    <h1>Acme Stop Light Control</h1>
+    <img src=https://www.clipartbest.com/cliparts/Kin/g6k/King6k9eT.jpeg alt="the Roadrunner">
+    <script>
+        function optionOneButtonClick() {
+            // Send an HTTP request to the server when the button is clicked
+            fetch('/stoplighton', {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => console.log('Click logged:', data))
+            .catch(error => console.error('Error:', error));
+        }
+        function optionTwoButtonClick() {
+            // Send an HTTP request to the server when the button is clicked
+            fetch('/stoplightoff', {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => console.log('Click logged:', data))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <h2>Turn Stop Light On</h2>
+    <button onclick="optionOneButtonClick()">Turn On</button>
+    <h2>Turn Stop Light Off</h2>
+    <button onclick="optionTwoButtonClick()">Turn Off</button>
+    <p>(Refresh the page to reset.)</p>
+</body>
+</html>
+
