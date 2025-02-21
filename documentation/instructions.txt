@@ -1,6 +1,27 @@
 --------------------------------------------------------------------------------
 Instructions
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Quick Instructions for Use
+.  Boot up the Raspberry Pi.
+.  Connect to the Pi using SSH or just use the Pi's graphical environment.
+.  Open three terminals, open one terminal and give it three tabs, or open one
+terminal and divide it into three panes.  
+.  Do the following in each terminal, tab, or pane:
+	Terminal 1:  
+		cd git/oit-sys-acad-wi-fi-stoplight/html/
+		python3 -u -m http.server 8000 2> ../state/web-access-log.txt
+	Terminal 2:
+		cd git/oit-sys-acad-wi-fi-stoplight/bash/
+		bash monitor.sh
+	Terminal 3:  
+		cd git/oit-sys-acad-wi-fi-stoplight/python/
+		python3 led-control.py
+.  Open a web browser and go to one of the following addresses:
+	http://127.0.0.1:8000/stoplight.html  [on the Pi]
+		or
+	http://10.37.186.47:8000/stoplight.html  [on another machine where IP address Pi's address]
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 How to Build a GitHub Repository
 
 Introduction
@@ -266,6 +287,9 @@ Telemetry:
 	(The telemetry is just for Raspberry Pi Imager and doesn't collect
 			any personally identifying information.)
 The imaging takes some time (15-20 min.?).
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Rest
 
 Pi Cabling Setup
 	Keyboard/mouse combo plugs into one of the four USB-A jacks on the Pi
